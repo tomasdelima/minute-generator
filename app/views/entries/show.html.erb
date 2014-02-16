@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <th>Nome da entrada</th>
+    <td><%= @entry.title %></td>
+  </tr>
+  <tr>
+    <th>Decrição da entrada</th>
+    <td><%= @entry.description %></td>
+  </tr>
+  <tr>
+    <th>Data de validade</th>
+    <td><%= @entry.due_date.try :to_date %></td>
+  </tr>
+  <tr>
+    <th>Responsável</th>
+    <td><%= @entry.responsible %></td>
+  </tr>
+  <tr>
+    <th>Finalizada</th>
+    <td><%= @entry.finished %></td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

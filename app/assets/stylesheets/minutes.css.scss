@@ -1,0 +1,54 @@
+body {
+  background: #F0FFF0;
+  font-family: Trebuchet MS;
+  // background-image: url(images/the-Bab-shrine.jpg);
+}
+
+a {
+  color: #005000;
+}
+
+.navbar {
+  background: #90BF90;
+  padding: 10px;
+  font-size: 30px;
+  color: #005000;
+
+  .configurations {
+    right: 2%;
+    position: absolute;
+    font-size: 15px;
+    top: 25px
+  }
+}
+
+table, tbody {
+  // border: 1px solid red;
+  border-spacing: 0px;
+  td, th {
+    padding: 5px 15px;
+  }
+  .config-table {
+    padding: 1px;
+    width: 100px;
+  }
+  th { background: #80E080 }
+  tr:nth-child(2n+1) { background: #D0FFE0 }
+  tr:nth-child(2n)   { background: #E0FFD0 }
+}
+
+table {
+  border: 2px solid #80E080;
+}
+
+.wide {
+  width: 600px;
+}
+
+.tall {
+  height: 200px
+}
+
+.center {
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+<br>
+
+<table>
+  <tr><th>Cidade</th>
+  <% ['Coord.', 'Vice', 'Sec. Ata', 'Sec. Corr.', 'Tesouraria', '', '', '', ''].each do |i| %>
+    <th><%= i  %></th>
+  <% end %></tr>
+
+  <% Ael.all.each do |ael| %>
+    <tr>
+      <th class='config-table'><%= text_field_tag ael.city, ael.city, id: "ael-city-#{ael.id}" %></th>
+      <% (0..8).each do |i| %>
+        <% member = ael.get_members[i] %>
+        <td class='config-table'><%= text_field_tag member, member, class: "config-table ael-#{ael.id}" %></td>
+        <%=  %>
+      <% end %>
+      <td class='save-ael' data-id='<%= ael.id %>'>Salvar</td>
+      <!-- <td class='delete-ael' data-id='<%= ael.id %>'>Excluir</td> -->
+    </tr>
+  <% end %>
+  <tr><th>Nova AEL</th></tr>
+  <tr>
+    <th class='config-table'><%= text_field_tag :new_ael, '', id: "ael-city-0" %></th>
+    <% (0..8).each do |i| %>
+      <td class='config-table'><%= text_field_tag :member, '', class: "config-table ael-0" %></td>
+      <%=  %>
+    <% end %>
+    <td class='save-ael' data-id='0'>Criar</td>
+  </tr>
+</table>
+
+*Para deletar uma AEL, descomentar uma linha no HTML

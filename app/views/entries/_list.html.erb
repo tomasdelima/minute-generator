@@ -1,0 +1,24 @@
+<!-- <div class="strong">Entradas</div> -->
+<table>
+  <th>Nome da entrada</th>
+  <th>Responsável</th>
+  <th class='wide'>Descrição</th>
+  <th> Data de validade</th>
+  <th>Finalizado</th>
+  <% @minute.entries.each do |entry|%>
+    <tr class='redirect' data-url='<%= edit_entry_path entry %>'>
+      <td><%= entry.title %></td>
+      <td class='center'><%= entry.responsible %></td>
+      <td><%= entry.description %></td>
+      <td class='center'><%= entry.due_date.try :to_date %></td>
+      <td class='center'><%= entry.finished %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <td>
+<%= link_to "Nova entrada", new_minute_entry_path(@minute) %>
+    </td>
+  </tr>
+</table>

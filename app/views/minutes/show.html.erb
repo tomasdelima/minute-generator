@@ -1,0 +1,20 @@
+<h1>Ata de número <%= @minute.id %></h1>
+
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Data da ata:</th>
+    <td><%= @minute.date.to_date %></td>
+  </tr>
+  <tr>
+    <th>Membros presentes:</th>
+    <td><%= @minute.members %></td>
+  </tr>
+</table>
+
+<br>
+<% if @minute.entries.empty? %>
+  Esta ata não possui entradas
+<% else %>
+  <%= render 'entries/list' %>
+<% end %>

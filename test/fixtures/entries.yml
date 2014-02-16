@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  due_date: 2014-02-15 14:46:57
+  minute_id: 
+  responsible: MyString
+  finished: false
+
+two:
+  title: MyString
+  description: MyText
+  due_date: 2014-02-15 14:46:57
+  minute_id: 
+  responsible: MyString
+  finished: false
