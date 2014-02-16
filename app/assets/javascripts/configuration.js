@@ -1,4 +1,4 @@
-$(document).ready(function () {
+ready = function () {
   $(".save-ael").click(function(e) {
     id = $(e.currentTarget).data('id');
     city = $('#ael-city-' + id)[0].value
@@ -26,4 +26,18 @@ $(document).ready(function () {
       success: function() { location.reload() }
     })
   })
-})
+
+  $(".active-ael").click(function(e) {
+    id = $(e.currentTarget).data('id')
+
+    console.log(id)
+    $.ajax({
+      url: '/set_active_ael',
+      data: {id: id},
+      method: 'put',
+    })
+  })
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

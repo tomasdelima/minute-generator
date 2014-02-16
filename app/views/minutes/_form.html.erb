@@ -31,7 +31,7 @@
     <% @minute.ael.get_members.each do |member| %>
       <tr>
         <td>
-        <% checked = @minute.members.split(', ').include?(member) if @minute.members %>
+          <% checked = @minute.members.split(', ').include?(member) if @minute.members %>
           <%= f.check_box :members, {checked: checked, multiple: true}, member, nil %>
           <%= f.label member %>
         </td>

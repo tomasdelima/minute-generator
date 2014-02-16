@@ -6,7 +6,7 @@
   <th> Data de validade</th>
   <th>Finalizado</th>
   <% @minute.entries.each do |entry|%>
-    <tr class='redirect' data-url='<%= edit_entry_path entry %>'>
+    <tr class='redirect realce' data-url='<%= edit_entry_path entry %>'>
       <td><%= entry.title %></td>
       <td class='center'><%= entry.responsible %></td>
       <td><%= entry.description %></td>

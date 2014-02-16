@@ -16,5 +16,7 @@ gem 'debugger'
 gem 'pry-debugger'
 gem 'pry-rails'
 
-
+group :development do
+  gem 'sqlite3'
+end
 

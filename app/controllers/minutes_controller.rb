@@ -2,14 +2,19 @@ class MinutesController < ApplicationController
   before_action :set_minute, only: [:show, :edit, :update, :destroy]
 
   def index
-    @minutes = Minute.all
+    if Ael.find_by_active true
+      @minutes = Minute.all
+    else
+      flash[:notice] = 'Escolha ou cadastre uma AEL'
+      redirect_to configurations_path
+    end
   end
 
   def show
   end
 
   def new
-    @minute = Minute.new
+    @minute = Minute.new ael: Ael.find_by_active(true)
   end
 
   def edit
@@ -17,10 +22,12 @@ class MinutesController < ApplicationController
 
   def create
     @minute = Minute.new(minute_params)
+    @minute.ael = Ael.find_by_active true
 
     respond_to do |format|
       if @minute.save
-        format.html { redirect_to edit_minute_path, notice: 'A ata foi criada com sucesso.' }
+        flash[:notice] = 'A ata foi criada com sucesso.'
+        format.html { redirect_to edit_minute_path @minute }
         format.json { render action: 'show', status: :created, location: @minute }
       else
         format.html { render action: 'new' }
@@ -32,7 +39,8 @@ class MinutesController < ApplicationController
   def update
     respond_to do |format|
       if @minute.update(minute_params)
-        format.html { redirect_to edit_minute_path, notice: 'A ata foi atualizada com sucesso.' }
+        flash[:notice] = 'A ata foi atualizada com sucesso.'
+        format.html { redirect_to edit_minute_path }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

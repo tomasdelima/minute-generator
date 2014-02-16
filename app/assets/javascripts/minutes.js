@@ -1,10 +1,10 @@
 ready = function () {
-  $(".redirect").mouseenter(function(e){
+  $(".realce").mouseenter(function(e){
     oldColor = e.currentTarget.style.background
     e.currentTarget.style.background = 'lightgreen'
     e.currentTarget.style.cursor = 'pointer'
   })
-  $(".redirect").mouseleave(function(e){
+  $(".realce").mouseleave(function(e){
     e.currentTarget.style.background = oldColor
   })
 

@@ -12,4 +12,10 @@ class AelsController < ApplicationController
     ael.destroy
     render json: ael
   end
+
+  def set_active_ael
+    Ael.update_all active: false
+    ael = Ael.find(params[:id]).update_attribute(:active, true)
+    render json: ael
+  end
 end

@@ -11,7 +11,7 @@
 
   <tbody>
     <% @minutes.each do |minute| %>
-      <tr class='redirect' data-url='<%= edit_minute_path minute %>'>
+      <tr class='redirect realce' data-url='<%= edit_minute_path minute %>'>
         <td><%= minute.date.to_date %></td>
         <td><%= minute.members %></td>
         <td><%= link_to 'Deletar', minute, method: :delete, data: { confirm: 'Tem certeza?' } %></td>

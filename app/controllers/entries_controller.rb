@@ -20,7 +20,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry.minute, notice: 'Entry was successfully created.' }
+        flash[:notice] = 'A entrada foi criada com sucesso.'
+        format.html { redirect_to @entry.minute }
         format.json { render action: 'show', status: :created, location: @entry }
       else
         format.html { render action: 'new' }
@@ -32,7 +33,8 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry.minute, notice: 'Entry was successfully updated.' }
+        flash[:notice] = 'A entrada foi atualizada com sucesso.'
+        format.html { redirect_to @entry.minute }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

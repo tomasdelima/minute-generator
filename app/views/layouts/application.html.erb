@@ -13,6 +13,12 @@
     <%= link_to 'Configurções', configurations_path, class: :configurations %>
   </div>
 
+  <% unless flash.blank? %>
+    <% flash.each do |k, v| %>
+      <%= content_tag 'p', v, class: k %>
+    <% end %>
+  <% end %>
+
   <%= yield %>
 
 </body>
