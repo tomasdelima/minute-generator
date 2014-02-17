@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+body {
+  background: #F0FFF0;
+  font-family: Trebuchet MS; }
+
+a {
+  color: #005000; }
+
+.navbar {
+  background: #90BF90;
+  padding: 10px;
+  font-size: 30px;
+  color: #005000; }
+  .navbar .configurations {
+    right: 2%;
+    position: absolute;
+    font-size: 15px;
+    top: 25px; }
+
+table, tbody {
+  border-spacing: 0px; }
+  table td, table th, tbody td, tbody th {
+    padding: 5px 15px; }
+  table .config-table, tbody .config-table {
+    padding: 1px;
+    width: 100px; }
+  table th, tbody th {
+    background: #80e080; }
+  table tr:nth-child(2n+1), tbody tr:nth-child(2n+1) {
+    background: #d0ffe0; }
+  table tr:nth-child(2n), tbody tr:nth-child(2n) {
+    background: #e0ffd0; }
+
+table {
+  border: 2px solid #80E080; }
+
+.wide {
+  width: 600px; }
+
+.tall {
+  height: 200px; }
+
+.center {
+  text-align: center; }
