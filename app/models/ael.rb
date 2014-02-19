@@ -1,5 +1,5 @@
 class Ael < ActiveRecord::Base
-  has_many :minutes
+  has_many :minutes, dependent: :destroy
 
   def get_members
     if members.nil?
