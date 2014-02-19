@@ -1,8 +1,8 @@
 class Update
   include Sidekiq::Worker
 
-  def perform(provider_names)
-    Minutes.each { |min|
+  def perform
+    Minute.all.each { |min|
       min.update_attribute :date, Date.today
     }
   end

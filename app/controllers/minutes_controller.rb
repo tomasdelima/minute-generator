@@ -50,7 +50,7 @@ class MinutesController < ApplicationController
   end
 
   def update_worker
-    Update.perform
+    Update.new.perform
   end
 
   def destroy
