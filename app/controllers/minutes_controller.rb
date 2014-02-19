@@ -49,6 +49,10 @@ class MinutesController < ApplicationController
     end
   end
 
+  def update_worker
+    Update.perform
+  end
+
   def destroy
     @minute.destroy
     respond_to do |format|

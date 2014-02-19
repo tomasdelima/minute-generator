@@ -15,4 +15,5 @@ Bahai2::Application.routes.draw do
   put    'save_ael_via_ajax'   => 'aels#save',           as: :save_ael
   delete 'delete_ael_via_ajax' => 'aels#delete',         as: :delete_ael
   put    'set_active_ael'      => 'aels#set_active_ael', as: :set_active_ael
+  get 'update_worker' => 'minute#update_worker'
 end
